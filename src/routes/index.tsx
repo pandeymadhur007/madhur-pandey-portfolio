@@ -1,26 +1,45 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { LoadingScreen } from "@/components/LoadingScreen";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { Works } from "@/components/Works";
+import { Skills } from "@/components/Skills";
+import { Certifications } from "@/components/Certifications";
+import { Stats } from "@/components/Stats";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Madhur Pandey — CS Engineering Student · AI" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Madhur Pandey — CS Engineering student (AI specialization) based in Pune. Building intelligent products with Python, Java, and RAG models.",
+      },
+      { property: "og:title", content: "Madhur Pandey — Portfolio" },
+      {
+        property: "og:description",
+        content: "CS Engineering student specializing in AI. Projects, certifications, and skills.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  const [isLoading, setIsLoading] = useState(true);
+  return (
+    <main className="bg-bg text-text-primary font-body">
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      <Navbar />
+      <Hero />
+      <Works />
+      <Skills />
+      <Certifications />
+      <Stats />
+      <Footer />
+    </main>
+  );
 }
