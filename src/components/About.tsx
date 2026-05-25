@@ -3,8 +3,8 @@ import { SectionHeader } from "./SectionHeader";
 
 const stats = [
   { value: "8.36", label: "CGPA" },
-  { value: "B.Tech", label: "CSE · AI" },
-  { value: "Pune", label: "India" },
+  { value: "B.E.", label: "CSE · AI" },
+  { value: "2028", label: "Graduating" },
   { value: "3+", label: "Projects" },
 ];
 
@@ -21,8 +21,9 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
           <div className="lg:col-span-3 space-y-5 text-base md:text-lg text-text-primary/85 leading-relaxed">
             <p>
-              I'm <span className="font-display italic">Madhur Pandey</span>, a Computer Science
-              Engineering student at NMIET, Pune (Class of '26), specializing in AI.
+              I'm <span className="font-display italic">Madhur Pandey</span>, a B.E. Computer
+              Science Engineering student at NMIET, Pune (Batch 2024 · Class of '28), specializing
+              in AI.
             </p>
             <p>
               I love turning ideas into working software — from{" "}

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import gsap from "gsap";
 
-const roles = ["Developer", "Engineer", "Builder", "Scholar"];
+const roles = ["Developer", "Engineer", "Builder"];
 const HLS_SRC = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
 
 export function Hero() {
@@ -70,9 +70,9 @@ export function Hero() {
           based in Pune, India.
         </p>
         <p className="blur-in text-sm md:text-base text-muted max-w-xl mb-10">
-          B.Tech CSE student (Class of '26) building practical software — from AI-powered agriculture
-          platforms to Java-based record systems. Focused on clean code, thoughtful UX, and shipping
-          things that work.
+          B.E. CSE student (Batch 2024 · Class of '28) building practical software — from AI-powered
+          agriculture platforms to Java-based record systems. Focused on clean code, thoughtful UX,
+          and shipping things that work.
         </p>
         <div className="blur-in inline-flex gap-3 md:gap-4 flex-wrap justify-center">
           <a href="#work" className="group relative rounded-full">

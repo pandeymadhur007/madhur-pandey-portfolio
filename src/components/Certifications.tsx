@@ -1,9 +1,21 @@
 import certDS from "@/assets/cert-datascience.jpeg";
 import certIdeathon from "@/assets/cert-ideathon.jpeg";
+import certIBM from "@/assets/cert-ibm.jpg";
+import certPython from "@/assets/cert-python.jpg";
+import certInfosys1 from "@/assets/cert-infosys-1.jpg";
+import certInfosys2 from "@/assets/cert-infosys-2.jpg";
 import { motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 
-const items = [
+type Item = {
+  title: string;
+  issuer: string;
+  date: string;
+  img: string;
+  extras?: { label: string; img: string }[];
+};
+
+const items: Item[] = [
   {
     title: "Essentials of Data Science",
     issuer: "PyNet Labs × NMIET, Pune",
@@ -17,16 +29,26 @@ const items = [
     img: certIdeathon,
   },
   {
-    title: "IBM SkillsBuild — AI & Python",
-    issuer: "IBM",
-    date: "2025",
-    img: null,
+    title: "Introduction to Retrieval Augmented Generation",
+    issuer: "IBM SkillsBuild",
+    date: "Aug 2025",
+    img: certIBM,
   },
   {
-    title: "Advanced Python Programming",
+    title: "AI & Python Development Megaclass — 300+ Hands-on Projects",
+    issuer: "Udemy · School of AI",
+    date: "Oct 2025",
+    img: certPython,
+  },
+  {
+    title: "Infosys Springboard — Robotics Courses",
     issuer: "Infosys Springboard",
-    date: "2025",
-    img: null,
+    date: "Mar 2026",
+    img: certInfosys1,
+    extras: [
+      { label: "Mini Challenge — Garbage Moving Robot", img: certInfosys1 },
+      { label: "Programming Activities — Drive the Bot", img: certInfosys2 },
+    ],
   },
 ];
 
@@ -51,43 +73,68 @@ export function Certifications() {
               whileHover={{ y: -4 }}
               className="group relative rounded-3xl border border-stroke bg-surface/30 backdrop-blur-md hover:bg-surface/60 transition-colors overflow-hidden"
             >
-              <div className="relative aspect-[16/9] bg-bg overflow-hidden border-b border-stroke">
-                {it.img ? (
+              <a
+                href={it.img}
+                target="_blank"
+                rel="noreferrer"
+                className="block relative aspect-[16/9] bg-bg overflow-hidden border-b border-stroke"
+              >
+                {it.extras ? (
+                  <div className="absolute inset-0 grid grid-cols-2 gap-1 p-1">
+                    {it.extras.map((ex) => (
+                      <img
+                        key={ex.label}
+                        src={ex.img}
+                        alt={ex.label}
+                        loading="lazy"
+                        className="w-full h-full object-cover rounded-lg transition-transform duration-700 group-hover:scale-105"
+                      />
+                    ))}
+                  </div>
+                ) : (
                   <img
                     src={it.img}
                     alt={it.title}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                ) : (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #0a0a1a 0%, #1e1e5a 60%, #4f46e5 100%)",
-                    }}
-                  >
-                    <span className="font-display italic text-3xl md:text-4xl text-white/80">
-                      {it.issuer.split(" ")[0]}
-                    </span>
-                  </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent" />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent pointer-events-none" />
+              </a>
               <div className="p-5 md:p-6 flex items-start gap-4">
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base md:text-lg text-text-primary leading-snug">{it.title}</h3>
                   <p className="text-xs text-muted mt-1">
                     {it.issuer} · {it.date}
                   </p>
+                  {it.extras && (
+                    <ul className="mt-3 space-y-1.5">
+                      {it.extras.map((ex) => (
+                        <li key={ex.label} className="flex items-center justify-between gap-3 text-xs">
+                          <span className="text-text-primary/80 truncate">{ex.label}</span>
+                          <a
+                            href={ex.img}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="shrink-0 rounded-full px-2.5 py-1 border border-stroke text-muted hover:text-text-primary hover:border-text-primary/40 transition-colors"
+                          >
+                            View ↗
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="shrink-0 text-xs rounded-full px-3 py-2 border border-stroke text-muted group-hover:text-text-primary group-hover:border-text-primary/40 transition-colors"
-                >
-                  View ↗
-                </a>
+                {!it.extras && (
+                  <a
+                    href={it.img}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 text-xs rounded-full px-3 py-2 border border-stroke text-muted group-hover:text-text-primary group-hover:border-text-primary/40 transition-colors"
+                  >
+                    View ↗
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
