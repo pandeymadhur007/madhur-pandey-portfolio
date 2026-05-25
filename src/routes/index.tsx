@@ -6,23 +6,26 @@ import { Hero } from "@/components/Hero";
 import { Works } from "@/components/Works";
 import { Skills } from "@/components/Skills";
 import { Certifications } from "@/components/Certifications";
-import { Stats } from "@/components/Stats";
+import { About } from "@/components/About";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { CursorGlow } from "@/components/CursorGlow";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Madhur Pandey — CS Engineering Student · AI" },
+      { title: "Madhur Pandey — CS Student · AI & Software Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Madhur Pandey — CS Engineering student (AI specialization) based in Pune. Building intelligent products with Python, Java, and RAG models.",
+          "Portfolio of Madhur Pandey — Computer Science Engineering student (AI specialization) in Pune. Projects in AI, Java, and software development.",
       },
       { property: "og:title", content: "Madhur Pandey — Portfolio" },
       {
         property: "og:description",
-        content: "CS Engineering student specializing in AI. Projects, certifications, and skills.",
+        content:
+          "CS Engineering student · AI & Software Developer. Projects, skills, and certifications.",
       },
     ],
   }),
@@ -31,14 +34,16 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
   return (
-    <main className="bg-bg text-text-primary font-body">
+    <main className="relative bg-bg text-text-primary font-body">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      <CursorGlow />
       <Navbar />
       <Hero />
       <Works />
       <Skills />
       <Certifications />
-      <Stats />
+      <About />
+      <Contact />
       <Footer />
     </main>
   );
