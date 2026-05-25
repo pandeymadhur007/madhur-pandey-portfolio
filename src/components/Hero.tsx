@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import gsap from "gsap";
 
-const roles = ["Creative", "Engineer", "Builder", "Scholar"];
+const roles = ["Developer", "Engineer", "Builder", "Scholar"];
 const HLS_SRC = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
 
 export function Hero() {
@@ -38,7 +38,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" ref={heroRef} className="relative h-screen w-full overflow-hidden">
+    <section id="home" ref={heroRef} className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
@@ -48,12 +48,14 @@ export function Hero() {
           playsInline
           className="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-        <div className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">CLASS OF '26</div>
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6 py-24">
+        <div className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">
+          Computer Science Student · AI & Software Developer
+        </div>
         <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">
           Madhur Pandey
         </h1>
@@ -67,20 +69,33 @@ export function Hero() {
           </span>{" "}
           based in Pune, India.
         </p>
-        <p className="blur-in text-sm md:text-base text-muted max-w-md mb-12">
-          CS Engineering student specializing in AI — building intelligent products with clean UI/UX, from RAG models to agriculture platforms.
+        <p className="blur-in text-sm md:text-base text-muted max-w-xl mb-10">
+          B.Tech CSE student (Class of '26) building practical software — from AI-powered agriculture
+          platforms to Java-based record systems. Focused on clean code, thoughtful UX, and shipping
+          things that work.
         </p>
-        <div className="blur-in inline-flex gap-4 flex-wrap justify-center">
+        <div className="blur-in inline-flex gap-3 md:gap-4 flex-wrap justify-center">
           <a href="#work" className="group relative rounded-full">
             <span className="absolute -inset-[2px] rounded-full accent-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative inline-block bg-text-primary text-bg group-hover:bg-bg group-hover:text-text-primary rounded-full text-sm px-7 py-3.5 transition-colors">
-              See Works
+              View Projects
             </span>
           </a>
-          <a href="mailto:pandeymadhur007@gmail.com" className="group relative rounded-full">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="group relative rounded-full"
+          >
             <span className="absolute -inset-[2px] rounded-full accent-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="relative inline-block border-2 border-stroke group-hover:border-transparent bg-bg text-text-primary rounded-full text-sm px-7 py-3.5">
-              Reach out...
+            <span className="relative inline-block border border-stroke bg-surface/60 backdrop-blur-md text-text-primary rounded-full text-sm px-7 py-3.5">
+              Download Resume ↓
+            </span>
+          </a>
+          <a href="#contact" className="group relative rounded-full">
+            <span className="absolute -inset-[2px] rounded-full accent-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative inline-block border border-stroke bg-bg/40 backdrop-blur-md text-text-primary rounded-full text-sm px-7 py-3.5">
+              Contact Me
             </span>
           </a>
         </div>

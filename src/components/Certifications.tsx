@@ -7,7 +7,7 @@ const items = [
   {
     title: "Essentials of Data Science",
     issuer: "PyNet Labs × NMIET, Pune",
-    date: "14 Oct 2025",
+    date: "Oct 2025",
     img: certDS,
   },
   {
@@ -15,12 +15,6 @@ const items = [
     issuer: "Nutan Incubation Centre, NMIET",
     date: "2025",
     img: certIdeathon,
-  },
-  {
-    title: "RAG Model Certification",
-    issuer: "Infosys Springboard",
-    date: "2025",
-    img: null,
   },
   {
     title: "IBM SkillsBuild — AI & Python",
@@ -34,12 +28,6 @@ const items = [
     date: "2025",
     img: null,
   },
-  {
-    title: "Infosys Technology Certification",
-    issuer: "Infosys",
-    date: "2025",
-    img: null,
-  },
 ];
 
 export function Certifications() {
@@ -50,34 +38,57 @@ export function Certifications() {
           eyebrow="Certifications"
           title="Recent achievements"
           italicWord="achievements"
-          subtitle="A collection of certifications and recognitions earned through programs, workshops, and competitions."
+          subtitle="Certifications and recognitions earned through programs, workshops, and competitions."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
           {items.map((it, i) => (
             <motion.div
               key={it.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="group flex items-center gap-5 p-4 bg-surface/30 hover:bg-surface border border-stroke rounded-[40px] sm:rounded-full transition-colors"
+              transition={{ duration: 0.6, delay: i * 0.07 }}
+              whileHover={{ y: -4 }}
+              className="group relative rounded-3xl border border-stroke bg-surface/30 backdrop-blur-md hover:bg-surface/60 transition-colors overflow-hidden"
             >
-              <div className="shrink-0 w-20 h-20 sm:w-24 sm:h-16 rounded-3xl sm:rounded-full overflow-hidden bg-bg border border-stroke">
+              <div className="relative aspect-[16/9] bg-bg overflow-hidden border-b border-stroke">
                 {it.img ? (
-                  <img src={it.img} alt={it.title} className="w-full h-full object-cover" />
+                  <img
+                    src={it.img}
+                    alt={it.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs font-display italic text-muted">
-                    cert
+                  <div
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #0a0a1a 0%, #1e1e5a 60%, #4f46e5 100%)",
+                    }}
+                  >
+                    <span className="font-display italic text-3xl md:text-4xl text-white/80">
+                      {it.issuer.split(" ")[0]}
+                    </span>
                   </div>
                 )}
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent" />
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base md:text-lg text-text-primary truncate">{it.title}</h3>
-                <p className="text-xs text-muted truncate">
-                  {it.issuer} · {it.date}
-                </p>
+              <div className="p-5 md:p-6 flex items-start gap-4">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base md:text-lg text-text-primary leading-snug">{it.title}</h3>
+                  <p className="text-xs text-muted mt-1">
+                    {it.issuer} · {it.date}
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="shrink-0 text-xs rounded-full px-3 py-2 border border-stroke text-muted group-hover:text-text-primary group-hover:border-text-primary/40 transition-colors"
+                >
+                  View ↗
+                </a>
               </div>
-              <span className="shrink-0 text-muted group-hover:text-text-primary transition-colors pr-2">↗</span>
             </motion.div>
           ))}
         </div>
