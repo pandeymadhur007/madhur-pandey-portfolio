@@ -9,8 +9,8 @@ const projects = [
     features: ["Multilingual AI chatbot", "Crop recommendation", "Live market prices", "Weather & climate data"],
     stack: ["React", "AI/LLM", "TailwindCSS", "Netlify"],
     bg: "linear-gradient(135deg, #1a3c2a 0%, #2d5a3d 50%, #5a8a5c 100%)",
-    live: "https://gramaiv1.netlify.app/",
-    github: "https://github.com/",
+    live: "https://officialgramai.netlify.app/",
+    github: "https://github.com/pandeymadhur007",
   },
   {
     title: "Patient Record System",
@@ -19,7 +19,7 @@ const projects = [
     features: ["Add / update / delete records", "Search & filter patients", "File-based persistence", "Clean OOP design"],
     stack: ["Java", "OOP", "File I/O"],
     bg: "linear-gradient(135deg, #0c2340 0%, #1a4a6e 60%, #2d8a9e 100%)",
-    github: "https://github.com/",
+    github: "https://github.com/pandeymadhur007",
   },
   {
     title: "Library Management System",
@@ -28,7 +28,7 @@ const projects = [
     features: ["Book issue & return", "Member management", "MySQL integration", "Search by title/author"],
     stack: ["Java", "MySQL", "JDBC"],
     bg: "linear-gradient(135deg, #5c2018 0%, #9b4423 60%, #d4842a 100%)",
-    github: "https://github.com/",
+    github: "https://github.com/pandeymadhur007",
   },
 ];
 

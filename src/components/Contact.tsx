@@ -11,7 +11,7 @@ const schema = z.object({
 
 const info = [
   { label: "Email", value: "pandeymadhur007@gmail.com", href: "mailto:pandeymadhur007@gmail.com" },
-  { label: "GitHub", value: "github.com/madhurpandey", href: "https://github.com/" },
+  { label: "GitHub", value: "github.com/pandeymadhur007", href: "https://github.com/pandeymadhur007" },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/madhur-pandey",

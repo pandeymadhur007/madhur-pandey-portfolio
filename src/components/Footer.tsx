@@ -6,8 +6,8 @@ const HLS_SRC = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4
 
 const socials = [
   { label: "LinkedIn", href: "https://linkedin.com/in/madhur-pandey-642b9230b" },
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "Portfolio", href: "https://gramaiv1.netlify.app/" },
+  { label: "GitHub", href: "https://github.com/pandeymadhur007" },
+  { label: "Portfolio", href: "https://officialgramai.netlify.app/" },
   { label: "Email", href: "mailto:pandeymadhur007@gmail.com" },
 ];
 
