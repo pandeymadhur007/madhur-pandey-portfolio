@@ -1,0 +1,7 @@
+# Madhur Pandey — Portfolio
+
+> Personal portfolio of Madhur Pandey, a B.E. Computer Science Engineering student (AI specialization) in Pune, India. Showcases projects, skills, certifications, and contact info.
+
+## Pages
+
+- [Home](/): Hero intro, featured projects, skills, certifications, about, and contact.

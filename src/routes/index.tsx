@@ -27,6 +27,29 @@ export const Route = createFileRoute("/")({
         content:
           "CS Engineering student · AI & Software Developer. Projects, skills, and certifications.",
       },
+      { property: "og:url", content: "https://madhur-portfolio.lovable.app/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://madhur-portfolio.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Madhur Pandey",
+          jobTitle: "AI & Software Developer",
+          description:
+            "B.E. Computer Science Engineering student (AI specialization) at NMIET, Pune.",
+          url: "https://madhur-portfolio.lovable.app/",
+          sameAs: [
+            "https://github.com/pandeymadhur007",
+            "https://www.linkedin.com/in/madhur-pandey",
+          ],
+        }),
+      },
     ],
   }),
 });
