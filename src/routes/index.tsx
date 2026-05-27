@@ -61,11 +61,10 @@ function Index() {
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <CursorGlow />
       <Navbar />
-      <Hero />
+      <About />
       <Works />
       <Skills />
       <Certifications />
-      <About />
       <Contact />
       <Footer />
     </main>
