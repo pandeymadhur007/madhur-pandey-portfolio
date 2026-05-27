@@ -171,60 +171,53 @@ export function About() {
           </div>
         </div>
 
-        {/* Right: glass card with stats */}
+        {/* Right: animated Globe centerpiece + stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-2 relative"
         >
-          <div className="relative rounded-3xl border border-stroke bg-surface/30 backdrop-blur-2xl p-6 md:p-8 overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-text-primary/5 blur-3xl" />
-            <div className="relative">
-              <div className="text-[11px] uppercase tracking-[0.25em] text-muted mb-5">
-                At a glance
-              </div>
-              <div className="space-y-3">
-                {stats.map((s, i) => (
-                  <motion.div
-                    key={s.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}
-                    className="group flex items-baseline justify-between rounded-2xl border border-stroke/70 bg-bg/40 px-5 py-4 hover:border-text-primary/30 hover:bg-bg/70 transition-all"
-                  >
-                    <span className="text-2xl md:text-3xl font-display italic text-text-primary">
-                      {s.value}
-                    </span>
-                    <span className="text-[11px] uppercase tracking-[0.2em] text-muted group-hover:text-text-primary/80 transition-colors">
-                      {s.label}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
+          <Globe />
 
-              <div className="mt-6 pt-6 border-t border-stroke/60 space-y-2 text-sm">
-                <div className="flex justify-between text-muted">
-                  <span>Degree</span>
-                  <span className="text-text-primary">B.E. CSE · AI</span>
+          <div className="relative mt-8 rounded-3xl border border-stroke bg-surface/30 backdrop-blur-2xl p-5 md:p-6 overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-text-primary/5 blur-3xl pointer-events-none" />
+            <div className="relative grid grid-cols-3 gap-3">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-2xl border border-stroke/70 bg-bg/40 px-3 py-3 text-center hover:border-text-primary/30 transition-colors"
+                >
+                  <div className="text-xl md:text-2xl font-display italic text-text-primary leading-none">
+                    {s.value}
+                  </div>
+                  <div className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-muted mt-2">
+                    {s.label}
+                  </div>
                 </div>
-                <div className="flex justify-between text-muted">
-                  <span>Institute</span>
-                  <span className="text-text-primary">NMIET, Pune</span>
-                </div>
-                <div className="flex justify-between text-muted">
-                  <span>Status</span>
-                  <span className="inline-flex items-center gap-2 text-text-primary">
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    Open to internships
-                  </span>
-                </div>
+              ))}
+            </div>
+            <div className="mt-5 pt-5 border-t border-stroke/60 space-y-2 text-xs md:text-sm">
+              <div className="flex justify-between text-muted">
+                <span>Degree</span>
+                <span className="text-text-primary">B.E. CSE · AI</span>
+              </div>
+              <div className="flex justify-between text-muted">
+                <span>Institute</span>
+                <span className="text-text-primary">NMIET, Pune</span>
+              </div>
+              <div className="flex justify-between text-muted">
+                <span>Status</span>
+                <span className="inline-flex items-center gap-2 text-text-primary">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  Open to internships
+                </span>
               </div>
             </div>
           </div>
         </motion.div>
       </div>
+
 
       {/* Scroll cue */}
       <a
