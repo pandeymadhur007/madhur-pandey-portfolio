@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Globe } from "./Globe";
+
 
 const roles = [
   "Computer Science Engineering Student",
