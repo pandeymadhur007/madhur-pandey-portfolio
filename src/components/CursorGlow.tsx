@@ -17,13 +17,11 @@ export function CursorGlow() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed z-[1] w-[420px] h-[420px] rounded-full -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300"
+      className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
       style={{
-        left: pos.x,
-        top: pos.y,
-        background:
-          "radial-gradient(circle, rgba(137,170,204,0.10) 0%, rgba(137,170,204,0) 60%)",
+        background: `radial-gradient(420px circle at ${pos.x}px ${pos.y}px, rgba(137,170,204,0.10), transparent 60%)`,
       }}
     />
   );
 }
+
