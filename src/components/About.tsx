@@ -88,8 +88,9 @@ export function About() {
         />
       </div>
 
-      <div className="max-w-[1200px] w-full mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 md:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
         {/* Left content */}
+
         <div className="lg:col-span-3 space-y-7">
           <div className="about-reveal text-xs text-muted uppercase tracking-[0.3em]">
             About Me
