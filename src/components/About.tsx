@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { Globe } from "./Globe";
-
 
 const roles = [
   "Computer Science Engineering Student",
@@ -11,11 +9,6 @@ const roles = [
   "Data Science Enthusiast",
 ];
 
-const stats = [
-  { value: "3+", label: "Projects" },
-  { value: "8+", label: "Skills" },
-  { value: "2024–28", label: "Learning Journey" },
-];
 
 export function About() {
   const rootRef = useRef<HTMLDivElement>(null);
