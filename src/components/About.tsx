@@ -81,13 +81,11 @@ export function About() {
         />
       </div>
 
-      {/* Globe — top backdrop, large and softly faded */}
-      <div className="pointer-events-none absolute -z-10 left-1/2 -translate-x-1/2 top-[-18%] md:top-[-22%] w-[90vw] max-w-[760px] aspect-square opacity-80">
-        <div className="absolute inset-0 [mask-image:radial-gradient(circle_at_50%_55%,black_45%,transparent_72%)]">
-          <Globe />
-        </div>
+      {/* Globe — top centerpiece with 3D depth, stats and chips */}
+      <div className="pointer-events-none absolute -z-10 left-1/2 -translate-x-1/2 top-[-10%] md:top-[-12%] w-[92vw] max-w-[680px] aspect-square">
+        <Globe />
         {/* Fade into page */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-bg" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-bg" />
       </div>
 
       <div className="relative z-10 max-w-[900px] w-full mx-auto px-6 md:px-10 text-center flex flex-col items-center gap-7">
