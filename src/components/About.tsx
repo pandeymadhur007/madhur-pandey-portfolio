@@ -96,13 +96,13 @@ export function About() {
             About Me
           </div>
 
-          <h1 className="about-reveal text-5xl md:text-7xl lg:text-8xl font-display italic leading-[0.95] tracking-tight text-text-primary">
+          <h1 className="about-reveal text-4xl md:text-5xl lg:text-6xl font-display italic leading-[1.02] tracking-tight text-text-primary">
             Madhur <span className="text-text-primary/70">Pandey</span>
           </h1>
 
-          <div className="about-reveal text-base md:text-xl text-text-primary/90 min-h-[2em]">
+          <div className="about-reveal text-sm md:text-base lg:text-lg text-text-primary/90 min-h-[1.8em]">
             <span className="font-display italic">{typed}</span>
-            <span className="inline-block w-[2px] h-5 md:h-6 bg-text-primary ml-1 align-middle animate-pulse" />
+            <span className="inline-block w-[2px] h-4 md:h-5 bg-text-primary ml-1 align-middle animate-pulse" />
           </div>
 
           <div className="about-reveal space-y-4 text-sm md:text-base text-text-primary/75 leading-relaxed max-w-2xl">
